@@ -3,9 +3,6 @@ package menkalai.baloongame.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by Rohan on 22-May-17.
- */
 
 public class AppHelper {
 

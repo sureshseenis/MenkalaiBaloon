@@ -10,10 +10,6 @@ import android.view.animation.LinearInterpolator;
 
 import menkalai.baloongame.utils.PixelHelper;
 
-/**
- * Created by Rohan on 21-May-17.
- */
-
 public class Balloon extends android.support.v7.widget.AppCompatImageView implements Animator.AnimatorListener, ValueAnimator.AnimatorUpdateListener {
 
     private ValueAnimator mAnimator;

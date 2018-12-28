@@ -2,6 +2,7 @@ package menkalai.baloongame;
 
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -68,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
             viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
-                    mContentView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        mContentView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
                     mScreenHeight = mContentView.getHeight();
                     mScreenWidth = mContentView.getWidth();
                 }

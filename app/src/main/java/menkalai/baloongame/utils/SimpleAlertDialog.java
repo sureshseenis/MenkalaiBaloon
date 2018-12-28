@@ -6,9 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
-/**
- * Created by Rohan on 22-May-17.
- */
+
 
 public class SimpleAlertDialog extends DialogFragment {
 

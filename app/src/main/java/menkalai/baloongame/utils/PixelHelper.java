@@ -1,8 +1,5 @@
 package menkalai.baloongame.utils;
 
-/**
- * Created by Rohan on 21-May-17.
- */
 
 import android.content.Context;
 import android.util.TypedValue;
