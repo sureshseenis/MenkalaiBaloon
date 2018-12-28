@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
     private static final int BALLOONS_PER_LEVEL = 10;
 
     private ViewGroup mContentView;
+    private LinearLayout mblinkerView;
     private int[] mBalloonColors = new int[7];
     private int mNextColor, mScreenWidth, mScreenHeight;
     TextView mScoreDisplay, mLevelDisplay;
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
         getWindow().setBackgroundDrawableResource(R.drawable.modern_background);
 
         mContentView = (ViewGroup) findViewById(R.id.activity_main);
+
         setToFullScreen();
 
         ViewTreeObserver viewTreeObserver = mContentView.getViewTreeObserver();
@@ -139,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
     }
 
     private void startLevel() {
-      //  mLevel++;
+        //  mLevel++;
         updateDisplay();
         BalloonLauncher balloonLauncher = new BalloonLauncher();
         balloonLauncher.execute(AppHelper.getLevel(this));
@@ -223,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
     }
 
     private void updateDisplay() {
-        AppHelper.setTopScore(this, mScore,mLevel);
+        AppHelper.setTopScore(this, mScore, mLevel);
         mScoreDisplay.setText(String.valueOf(mScore));
         mLevelDisplay.setText(String.valueOf(mLevel));
     }
@@ -265,6 +269,8 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+
             }
 
             return null;
@@ -299,6 +305,8 @@ public class MainActivity extends AppCompatActivity implements Balloon.BalloonLi
 //      Let 'er fly
         int duration = Math.max(MIN_ANIMATION_DURATION, MAX_ANIMATION_DURATION - (mLevel * 1000));
         balloon.releaseBalloon(mScreenHeight, duration);
+
+
 
     }
 }
